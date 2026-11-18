@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Offline Checker</string>
+    <string name="grant_usage_access">Grant usage access</string>
+    <string name="usage_access_hint">Android only exposes per-app network usage to apps with Usage access. Enable it for Offline Checker below.</string>
+    <string name="usage_access_missing">Can\'t read network stats. Grant Usage access and try again.</string>
+    <string name="show_system_apps">Show system apps</string>
+    <string name="hide_system_apps">Hide system apps</string>
+    <string name="no_internet_permission">No INTERNET permission</string>
+    <string name="sort_usage">Usage</string>
+    <string name="sort_name">Name</string>
+    <string name="sort_usage_hint">Sort by usage. Tap for sort options.</string>
+    <string name="sort_name_hint">Sort by name. Tap for sort options.</string>
+    <string-array name="ranges">
+        <item>Last 24 hours</item>
+        <item>Last 7 days</item>
+    </string-array>
+</resources>

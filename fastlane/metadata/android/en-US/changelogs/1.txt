@@ -1,0 +1,7 @@
+Initial 0.9 release.
+
+• Lists visible apps and shows whether each has the INTERNET permission.
+• Apps with INTERNET show received and sent data for the last 7 days or 24 hours (7 days by default).
+• Apps without INTERNET are marked "No INTERNET permission".
+• App icons in the list, and a system-apps toggle in the top bar (off by default).
+• No INTERNET permission: all checks are read on-device and never leave it.
