@@ -65,6 +65,21 @@ Or open the folder in Android Studio. Requires JDK 17+ and Android SDK 35.
    into an fdroiddata merge request; F-Droid then builds and signs from source.
    Later versions are picked up from tags automatically.
 
+## Contributing
+
+Pull requests are welcome at
+[github.com/octoflashdev/offline-checker](https://github.com/octoflashdev/offline-checker),
+targeting `main`. This covers the app code, README, app strings, and
+`fastlane/metadata/android` text (F-Droid reads that directory from this repo, so
+changes here flow through to the F-Droid listing).
+
+The F-Droid packaging recipe (`metadata/com.offlinechecker.yml` on fdroiddata, mirrored
+in `fdroid/`) is maintainer-only; it is updated through merge requests against
+[fdroid/fdroiddata](https://gitlab.com/fdroid/fdroiddata), not GitHub pull requests.
+
+Report bugs in the
+[GitHub issue tracker](https://github.com/octoflashdev/offline-checker/issues).
+
 ## License
 
 MIT
