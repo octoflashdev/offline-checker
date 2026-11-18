@@ -1,12 +1,20 @@
-# Submission metadata for fdroiddata (https://gitlab.com/fdroid/fdroiddata).
-# Copy to metadata/com.offlinechecker.yml in an fdroiddata merge request.
+# F-Droid metadata for Offline Checker (com.offlinechecker) -- local workspace copy.
+# Mirrors fdroiddata merge request !58015, head 77a844039780990950bd539f103f1b2d3c10c117:
+#   fdroid/com.offlinechecker.yml            -> fdroiddata: metadata/com.offlinechecker.yml
+#   fdroid/com.offlinechecker/en-US/summary.txt -> fdroiddata: metadata/com.offlinechecker/en-US/summary.txt
+# When copying into fdroiddata, drop this comment block: fdroidserver's
+# 'fdroid rewritemeta' rewrites the file canonically and strips comments.
 Categories:
   - Internet
   - System
 License: MIT
 AuthorName: octoflashdev
+WebSite: https://github.com/octoflashdev/offline-checker
+SourceCode: https://github.com/octoflashdev/offline-checker
+IssueTracker: https://github.com/octoflashdev/offline-checker/issues
+
 Name: Offline Checker
-Summary: See which apps can reach the internet and how much data they use
+AutoName: Offline Checker
 Description: |
   Offline Checker lists visible installed apps and shows which ones hold the
   INTERNET permission. Apps with INTERNET show how much data they received and
@@ -20,18 +28,19 @@ Description: |
   Offline Checker has no INTERNET permission. Android's own package and network
   statistics are read on-device with Usage access and are never uploaded or
   shared. There are no ads, no third-party ad networks, and no trackers.
-WebSite: https://github.com/octoflashdev/offline-checker
-SourceCode: https://github.com/octoflashdev/offline-checker
-IssueTracker: https://github.com/octoflashdev/offline-checker/issues
+
 RepoType: git
 Repo: https://github.com/octoflashdev/offline-checker.git
 
 Builds:
   - versionName: '1.0'
     versionCode: 2
-    commit: v1.0
+    commit: bb8cdfd803fb4f74c75a75fd0a99cdeaa522fb6b
+    subdir: app
     gradle:
       - yes
 
 AutoUpdateMode: Version
 UpdateCheckMode: Tags
+CurrentVersion: '1.0'
+CurrentVersionCode: 2
