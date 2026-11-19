@@ -12,6 +12,32 @@ permission and how much data the ones that do send and receive.
 - System apps are hidden by default; **Show system apps** in the top bar includes them.
 - No ads, no trackers, no libraries; one Activity, plain platform views.
 
+## Why it exists
+
+"Offline" is a checkable fact on Android, in two halves: the `INTERNET` permission in
+an app's manifest says *can it* reach the network, and Android's per-app network
+statistics say *how much* it does. Offline Checker answers both halves in one
+list — and takes a stance on each:
+
+- **The checker itself has no `INTERNET` permission.** The verdict an app without
+  `INTERNET` gets is enforced by the OS, and the checker holds itself to the same
+  standard you can verify in its own
+  [manifest](app/src/main/AndroidManifest.xml): Android blocks every network call it
+  could ever make. It does not even request `QUERY_ALL_PACKAGES` — the
+  Play-restricted visibility permission most "app manager" apps ask for — accepting
+  Android 11's package-visibility filter instead of shipping a capability it does not
+  need. What it shows you is what your device can show any app.
+- **No third-party libraries, one Activity, plain platform views.** The entire
+  codebase is small enough to audit in a single sitting, and the MIT-licensed source
+  is the same code that builds the release APK.
+- **Numbers come from Android's own accounting.** Totals are read on-device from
+  `NetworkStatsManager` — the same per-app attribution the system's Data usage screen
+  shows in aggregate. Nothing is uploaded, nothing is inferred, nothing leaves the
+  device.
+
+The result is a tool whose trust model you can check the same way it checks everyone
+else's apps.
+
 ## Permissions
 
 The manifest declares exactly one permission:
