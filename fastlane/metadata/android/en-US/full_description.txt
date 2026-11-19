@@ -1,5 +1,14 @@
-Offline Checker lists visible installed apps and shows which ones hold the INTERNET permission. Apps with INTERNET show how much data they received and sent over Wi-Fi and mobile for the last 7 days or 24 hours; apps without it are marked "No INTERNET permission". The default sort orders apps with INTERNET by usage and appends the rest by name; a sort badge next to the range control opens a Usage/Name dropdown, and Name sorts every app alphabetically. A top-bar toggle includes system apps; they are hidden by default.
+An Android app is offline exactly when its manifest lacks the INTERNET permission — without it, the operating system blocks every network connection the app could open. Offline Checker shows you which apps hold that permission, and how much data the ones that do send and receive.
 
-Offline Checker has no INTERNET permission. Android's own package and network statistics are read on-device with Usage access and are never uploaded or shared. There are no ads, no third-party ad networks, and no trackers.
+• Lists visible installed apps and marks each one. Apps with INTERNET show received and sent traffic for the last 24 hours or 7 days (7 days by default). Apps without it are marked "No INTERNET permission" — a fact read straight from the manifest, not a vendor's word.
+• The default sort puts the apps that reach the internet at the top, ordered by total traffic, then the rest by name. A sort badge opens a Usage/Name dropdown; Name sorts every app alphabetically.
+• System apps are hidden by default; a top-bar toggle includes them.
+• Traffic totals are read on-device from Android's own per-app network statistics — the same accounting the system's Data usage screen shows in aggregate.
 
-Limitations: Android exposes per-app byte totals only, not destinations. On Android 11 and newer, some non-launchable background and system apps are hidden by package visibility and cannot be listed without the Play-restricted QUERY_ALL_PACKAGES permission, which Offline Checker deliberately does not request. Apps sharing a UID are counted together, and some devices keep less than 7 days of network history.
+Offline Checker itself has no INTERNET permission: Android blocks every network call it could ever make. It also deliberately does not request QUERY_ALL_PACKAGES, the Play-restricted permission that lifts Android 11's package-visibility filter. Its one special grant is Usage access, which Android requires before an app may read other apps' network statistics; the app's button takes you to that grant screen.
+
+There are no ads, no libraries, no trackers — one Activity, plain platform views, MIT-licensed source you can audit.
+
+Limitations: Android exposes per-app byte totals only, not destinations — seeing domains or IPs requires a local VPN tool. Without QUERY_ALL_PACKAGES, some non-launchable background apps are hidden by package visibility and cannot be listed. Apps sharing a UID are counted together, and some devices keep less than 7 days of network history.
+
+Source code: https://github.com/octoflashdev/offline-checker

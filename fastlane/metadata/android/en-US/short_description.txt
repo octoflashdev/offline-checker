@@ -1,1 +1,1 @@
-See which apps can reach the internet and how much data they use.
+Are your offline apps really offline? Check the INTERNET permission.
